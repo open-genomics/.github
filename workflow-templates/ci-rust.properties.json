@@ -1,0 +1,6 @@
+{
+  "name": "Rust CI (four-gate)",
+  "description": "cargo fmt / clippy / test / doc 四门禁，含依赖缓存",
+  "iconName": "rust",
+  "categories": ["Rust", "continuous-integration"]
+}

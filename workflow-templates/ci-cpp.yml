@@ -1,0 +1,65 @@
+# C++ / CMake 起步 CI
+#
+# 这是给尚无 CI 的 C++ 仓库用的起点，不是成品。请按目标仓库的实际情况调整：
+#   - 若用 Conan 管理依赖，在 configure 之前加一步 `conan install`（见下方注释）
+#   - 若仓库带 CMakePresets.json，优先用 `cmake --preset` 而不是手写 -D 参数
+#   - 按需增减 sanitizer / coverage / 多编译器矩阵
+name: CI
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: CMake / ${{ matrix.build_type }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Debug, Release]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装工具链
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build clang cmake
+
+      # 若依赖由 Conan 管理，取消下面这段注释并补上 profile：
+      # - name: 安装 Conan
+      #   run: pipx install conan
+      # - name: 安装依赖
+      #   run: conan install . --profile=conan/profiles/clang --build=missing
+
+      - name: 配置
+        run: |
+          cmake -S . -B build \
+            -G Ninja \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+            -DCMAKE_CXX_COMPILER=clang++ \
+            -DBUILD_TESTING=ON
+
+      - name: 构建
+        run: cmake --build build --parallel
+
+      - name: 测试
+        run: ctest --test-dir build --output-on-failure
+
+  format:
+    name: clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 安装 clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+      - name: 检查格式
+        run: |
+          find src include tests \
+            -type f \( -name '*.cpp' -o -name '*.h' -o -name '*.hpp' \) \
+            -print0 | xargs -0 clang-format --dry-run --Werror

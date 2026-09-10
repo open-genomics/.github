@@ -1,0 +1,47 @@
+# Python 起步 CI
+#
+# 默认按 uv 编写（仓库有 uv.lock 时体验最好）。若目标仓库用 pip + requirements.txt，
+# 把「安装 uv」「安装依赖」两步换成：
+#   - run: pip install -r requirements.txt
+# 按仓库实际情况增删 lint / 类型检查 / 测试步骤。
+name: CI
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: lint / type / test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: 安装 Python
+        run: uv python install
+
+      - name: 安装依赖
+        run: uv sync --all-extras
+
+      - name: Lint
+        run: uv run ruff check .
+
+      - name: 格式检查
+        run: uv run ruff format --check .
+
+      # 若仓库启用了 mypy / pyright，取消注释并补上配置
+      # - name: 类型检查
+      #   run: uv run mypy .
+
+      - name: 测试
+        run: uv run pytest -q

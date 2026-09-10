@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 安全漏洞（私下上报）
+    url: https://github.com/open-genomics/.github/blob/main/SECURITY.md
+    about: 请勿公开披露未修复的安全问题，按安全策略走私有漏洞上报通道。
+  - name: 使用问题与讨论
+    url: https://github.com/open-genomics/.github/blob/main/SUPPORT.md
+    about: 提问前请先读支持指南，它能帮你找到正确的提问位置和必要上下文。
+  - name: 贡献指南
+    url: https://github.com/open-genomics/.github/blob/main/CONTRIBUTING.md
+    about: 提交 PR 前请先读贡献指南，了解分支、提交信息与门禁要求。

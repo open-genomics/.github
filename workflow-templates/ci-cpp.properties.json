@@ -1,0 +1,6 @@
+{
+  "name": "C++ CI (CMake)",
+  "description": "CMake 配置、构建、ctest 与 clang-format 检查",
+  "iconName": "cpp",
+  "categories": ["C++", "continuous-integration"]
+}

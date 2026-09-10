@@ -1,0 +1,72 @@
+name: Bug 报告
+description: 报告错误行为、崩溃、构建失败或数据损坏
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢报告问题。请尽量提供完整信息以便复现。
+
+        > ⚠️ 安全漏洞**不要**用本模板，请走仓库的私有漏洞上报通道，见 SECURITY.md。
+  - type: input
+    id: project
+    attributes:
+      label: 项目
+      description: 出现问题的仓库名（在目标仓库内提 issue 可跳过）
+      placeholder: 例如 fq-compressor-rust
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      description: 版本号输出，或 git commit
+      placeholder: 例如 v0.1.1，或 1a2a216
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 平台
+      options:
+        - Linux
+        - macOS
+        - Windows
+        - WSL
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: toolchain
+    attributes:
+      label: 工具链版本
+      description: 编译器 / 运行时版本（C++ 填 clang/gcc，Rust 填 rustc，Python 填 python）
+      placeholder: 例如 clang 18.1.3 / rustc 1.98.0 / python 3.12
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤
+      description: 实际运行的完整命令、最小输入数据（能切小就切小）
+      placeholder: |
+        1. 运行 `...`
+        2. 输入 `...`
+        3. 观察到 `...`
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望行为与实际行为
+      description: 你认为应该发生什么，实际发生了什么
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 输出与日志
+      description: 完整报错信息、退出码、相关日志
+      render: shell
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+      description: 是否可稳定复现？是否与特定输入/规模/并发度相关？之前是否正常工作？

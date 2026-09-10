@@ -1,0 +1,6 @@
+{
+  "name": "Python CI (uv)",
+  "description": "uv 依赖安装、ruff lint 与格式检查、pytest",
+  "iconName": "python",
+  "categories": ["Python", "continuous-integration"]
+}

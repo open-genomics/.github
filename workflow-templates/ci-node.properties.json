@@ -1,0 +1,6 @@
+{
+  "name": "Node.js CI",
+  "description": "npm ci、构建检查与内容检查（如链接检查）",
+  "iconName": "nodejs",
+  "categories": ["JavaScript", "continuous-integration"]
+}

@@ -1,0 +1,53 @@
+# Node.js / 前端站点起步 CI
+#
+# 参考 wiki-bioinfo 的既有实践：`npm ci` + 构建 + 独立的内容检查脚本。
+# 若仓库有自定义检查脚本（如链接检查），照下面「内容检查」那样单独加一步，
+# 让它能独立失败、独立重跑。
+name: CI
+
+on:
+  push:
+    branches: [$default-branch]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      - name: 类型检查与构建
+        run: npm run check
+
+  content-check:
+    name: Content Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
+
+      # 若仓库没有内容检查脚本，删掉这一步或替换成自己的检查
+      - name: 检查内部链接
+        run: npm run check:links
