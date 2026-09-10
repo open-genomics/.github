@@ -23,6 +23,12 @@ Open Genomics 组织的**组织级配置仓库**。这里的文件对该组织�
 │   ├── ci-rust.yml
 │   ├── ci-python.yml
 │   └── ci-node.yml
+├── governance/                   # 组织工程治理文档（含 2026-08-13 审计包）
+│   ├── README.md                 # 入口：文档索引 + 与现实对照表
+│   ├── 00..11-*.md               # 各仓库的风险与修复规格
+│   ├── PLAN.md                   # ⚠️ 整份已过时，仅供追溯
+│   ├── changes/                  # 首轮 change 的可复制草案
+│   └── templates/openspec/       # OpenSpec 模板
 ├── CODE_OF_CONDUCT.md            # 以下四份为组织级兜底
 ├── CONTRIBUTING.md
 ├── SECURITY.md
