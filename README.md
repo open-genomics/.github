@@ -55,10 +55,12 @@ issue 模板是整体覆盖：只要目标仓库自己有 `.github/ISSUE_TEMPLAT
 3. 在新仓库启用 **Settings → Code security → Private vulnerability reporting**，
    否则 `SECURITY.md` 里指向的私有上报通道不可用
 
+## 许可
+
+本仓库的社区健康文件、Issue/PR 模板与工作流模板以 **CC0 1.0 Universal**
+放弃著作权，便于其他项目直接复制取用。完整法律文本见 [LICENSE](LICENSE)。
+
 ## 待办
 
-- [ ] `CODE_OF_CONDUCT.md` 中的举报渠道目前指向 @LessUp 的 GitHub 私信，
-      建议补一个专用邮箱后替换
-- [ ] 补充本仓库的 `LICENSE`（社区健康文件的许可方式需维护者决定）
-- [ ] 将根目录 `maintenance-design/` 的组织治理文档迁入本仓库，
-      使其进入版本控制并可协作评审
+- [ ] `CODE_OF_CONDUCT.md` 的举报渠道目前仅支持 GitHub 私信 @LessUp。
+      若日后需要邮箱渠道，替换该节即可。
