@@ -68,5 +68,5 @@ issue 模板是整体覆盖：只要目标仓库自己有 `.github/ISSUE_TEMPLAT
 
 ## 待办
 
-- [ ] `CODE_OF_CONDUCT.md` 的举报渠道目前仅支持 GitHub 私信 @LessUp。
+- [ ] `CODE_OF_CONDUCT.md` 的举报渠道目前仅支持 GitHub 私信 @holtwood。
       若日后需要邮箱渠道，替换该节即可。
