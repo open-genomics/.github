@@ -54,8 +54,8 @@
 ## 参与贡献
 
 - 各仓库的 `CONTRIBUTING.md` 描述该项目的具体流程；未单独定义的，以组织的
-  [贡献指南](https://github.com/open-genomics/.github/blob/main/CONTRIBUTING.md) 为准
+  [贡献指南](https://github.com/open-genomics/.github/blob/master/CONTRIBUTING.md) 为准
 - 安全问题请走各仓库的**私有漏洞上报**通道，详见
-  [安全策略](https://github.com/open-genomics/.github/blob/main/SECURITY.md)
-- 所有仓库遵循[行为准则](https://github.com/open-genomics/.github/blob/main/CODE_OF_CONDUCT.md)
-- 需要帮助或不确定该开在哪，见[支持指南](https://github.com/open-genomics/.github/blob/main/SUPPORT.md)
+  [安全策略](https://github.com/open-genomics/.github/blob/master/SECURITY.md)
+- 所有仓库遵循[行为准则](https://github.com/open-genomics/.github/blob/master/CODE_OF_CONDUCT.md)
+- 需要帮助或不确定该开在哪，见[支持指南](https://github.com/open-genomics/.github/blob/master/SUPPORT.md)
