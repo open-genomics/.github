@@ -2,9 +2,11 @@
 
 # Open Genomics
 
-**面向生物信息学的开源工具链与中文知识库**
+**高性能生物信息学系统软件与中文知识库**
 
-从 FASTQ 压缩、序列比对到变异检测，以及把它们讲清楚的知识库。
+*High-performance systems software for genomics — compression, alignment, SIMD kernels, bounded-memory pipelines.*
+
+从 FASTQ 压缩、序列比对到高性能计算流水线，以及把它们讲清楚的知识库。
 
 </div>
 
@@ -42,6 +44,12 @@
 |:-----|:-----|
 | [wiki-bioinfo](https://github.com/open-genomics/wiki-bioinfo) | 面向中文社区的生物信息学体系化知识库：连接生物学对象、计算模型、核心算法、分析流程与数据资源 |
 | [awesome-bioinfo-algorithms](https://github.com/open-genomics/awesome-bioinfo-algorithms) | 精选生物信息学算法知识库，含复杂度分析、CLI 维护工具与双语文档 |
+
+## 工程原则
+
+- **内存上界靠设计，不靠压测** — 有界队列 + credit 反压，worst-case RSS 在实现之前推导。
+- **基准是台账，不是截图** — 合成数据与真实语料分开报告，每次变更过回归。
+- **Fail closed** — 截断、校验和不匹配、内存超预算一律报错终止，绝不静默篡改。
 
 ## 参与贡献
 
