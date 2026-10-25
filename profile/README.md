@@ -19,7 +19,7 @@
 
 | 项目 | 语言 | 说明 |
 |:-----|:-----|:-----|
-| [fq-compressor](https://github.com/open-genomics/fq-compressor) | C++23 | FASTQ 专用压缩归档：列式分离 + 2-bit 碱基打包 + Zstd，三层 XXH64 校验，内存有界 |
+| [fq-compressor](https://github.com/open-genomics/fq-compressor) [🌐](https://open-genomics.github.io/fq-compressor/) | C++23 | FASTQ 专用压缩归档：列式分离 + 2-bit 碱基打包 + Zstd，三层 XXH64 校验，内存有界 |
 | [fq-compressor-rust](https://github.com/open-genomics/fq-compressor-rust) | Rust | 围绕块索引 `.fqc` 归档格式的独立实现，支持随机访问 |
 
 > ⚠️ **两个 `fqc` 的格式族不同。** 它们共享 `fqc` 命令名与 `.fqc` 后缀，但归档格式族互不兼容，**不能互相解码**。跨实现使用前请先确认格式族，详见各仓库 README。
@@ -42,13 +42,13 @@
 
 | 项目 | 语言 | 说明 |
 |:-----|:-----|:-----|
-| [micos-2024](https://github.com/open-genomics/micos-2024) | Python | 2024「猛犸杯」参赛作品 · 宏基因组学端到端分析流程 |
+| [micos-2024](https://github.com/open-genomics/micos-2024) [🌐](https://open-genomics.github.io/micos-2024/) | Python | 2024「猛犸杯」参赛作品 · 宏基因组学端到端分析流程 |
 
 ## 知识库
 
 | 项目 | 说明 |
 |:-----|:-----|
-| [wiki-bioinfo](https://github.com/open-genomics/wiki-bioinfo) | 面向中文社区的生物信息学体系化知识库：连接生物学对象、计算模型、核心算法、分析流程与数据资源 |
+| [wiki-bioinfo](https://github.com/open-genomics/wiki-bioinfo) [🌐](https://open-genomics.github.io/wiki-bioinfo/) | 面向中文社区的生物信息学体系化知识库：连接生物学对象、计算模型、核心算法、分析流程与数据资源 |
 | [awesome-bioinfo-algorithms](https://github.com/open-genomics/awesome-bioinfo-algorithms) | 精选生物信息学算法知识库，含复杂度分析、CLI 维护工具与双语文档 |
 
 ## 工程原则
