@@ -7,6 +7,7 @@
 *High-performance systems software for genomics — compression, alignment, SIMD kernels, bounded-memory pipelines.*
 
 从 FASTQ 压缩、序列比对到高性能计算流水线，以及把它们讲清楚的知识库。
+同一核心工具常设 C++23 与 Rust 两条实现线：前者面向极致性能与生产部署，后者面向内存安全与可移植性；已收敛的实验路线移入归档区保留。
 
 </div>
 
@@ -29,8 +30,13 @@
 | 项目 | 语言 | 说明 |
 |:-----|:-----|:-----|
 | [fastq-tools](https://github.com/open-genomics/fastq-tools) | C++23 | 高性能 FASTQ 质控工具（统计 / 过滤）：零拷贝 I/O、TBB 流水线 |
-| [minibwa-rust](https://github.com/open-genomics/minibwa-rust) | Rust | 内存安全的 BWA-MEM 风格单端 DNA 短读比对器，以 C 参考实现为行为标准 |
-| [bwa-rust](https://github.com/open-genomics/bwa-rust) | Rust | BWA-MEM 风格单端短读比对：FM-index、SMEM 种子、chaining、Smith-Waterman、SAM 输出 |
+| [minibwa-rust](https://github.com/open-genomics/minibwa-rust) | Rust | [lh3/minibwa](https://github.com/lh3/minibwa)（bwa-mem 继任者）的纯 Rust 移植：索引与 C 版字节级兼容，CI 对照验证，含配对端 |
+
+### 归档
+
+| 项目 | 语言 | 说明 |
+|:-----|:-----|:-----|
+| [bwa-rust](https://github.com/open-genomics/bwa-rust) | Rust | BWA-MEM 风格比对器的从零实现（FM-index → SMEM → chaining → SW → SAM 全链路），已由 minibwa-rust 承接，保留作教学参考 |
 
 ### 分析流程
 
