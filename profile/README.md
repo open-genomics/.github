@@ -11,6 +11,8 @@
 
 </div>
 
+> **维护模式（2026-11-06）**：生物信息是过去的主线，不再是当前重点。仓库保留可复现性与必要的维护修复；不新增主线功能。当前系统工作见 [holtwood-systems](https://github.com/holtwood-systems)。
+
 ---
 
 ## 工具链
@@ -57,7 +59,9 @@
 - **基准是台账，不是截图** — 合成数据与真实语料分开报告，每次变更过回归。
 - **Fail closed** — 截断、校验和不匹配、内存超预算一律报错终止，绝不静默篡改。
 
-## 参与贡献
+## 参与贡献（维护模式）
+
+不承诺新功能；优先接受正确性、构建、安全与文档修复。
 
 - 各仓库的 `CONTRIBUTING.md` 描述该项目的具体流程；未单独定义的，以组织的
   [贡献指南](https://github.com/open-genomics/.github/blob/master/CONTRIBUTING.md) 为准
@@ -65,3 +69,7 @@
   [安全策略](https://github.com/open-genomics/.github/blob/master/SECURITY.md)
 - 所有仓库遵循[行为准则](https://github.com/open-genomics/.github/blob/master/CODE_OF_CONDUCT.md)
 - 需要帮助或不确定该开在哪，见[支持指南](https://github.com/open-genomics/.github/blob/master/SUPPORT.md)
+
+---
+
+维护者：[holtwood](https://github.com/holtwood) · 当前方向：[holtwood-systems](https://github.com/holtwood-systems) · 比赛：[holtwood-arena](https://github.com/holtwood-arena)
